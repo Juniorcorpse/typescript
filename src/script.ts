@@ -1,3 +1,18 @@
+/**
+ * =-=-=-=-=-=-=-=-=-=-=-=-=
+ * = comando de compilação =
+ * =-=-=-=-=-=-=-=-=-=-=-=-=
+ * 
+ * $-> tsc src/script.ts --outDir public/assets/js
+ * 
+ * * =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+ * = whatchMode, compila automatico a cada save  =
+ * =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+ * 
+ *  $-> tsc src/script.ts --outDir public/assets/js -w
+ *
+*/
+
 let num1 = document.getElementById('nun1') as HTMLInputElement; 
 let num2 = document.getElementById('nun2') as HTMLInputElement;
 
@@ -71,3 +86,55 @@ resumo2({
 let idadeField = document.getElementById('id') as HTMLInputElement;
 
 console.log(idadeField.value);
+
+// Types literais
+type Options = {
+    width: number,
+    height: number
+}
+
+function config(props: Options | 'auto'){
+
+}
+
+config({width: 100, height: 100});
+config('auto');
+
+
+//inferencia literal
+
+function fazerRequisicao(url:string, method: 'GET' | 'POST'){}
+
+type RequestDetails = {
+    url: string,
+    method: 'GET' | 'POST'
+};
+
+let req: RequestDetails = {
+    url: 'https://www.google.com.br',
+    method: 'GET'
+}
+
+fazerRequisicao(req.url, req.method);
+
+//Type para funçoes
+
+type MathFunction = (n1: number, n2: number) => number;
+
+const somar: MathFunction = (n1, n2) => {
+    return n1 + n2;
+}
+
+const subitrair :MathFunction = (n1, n2) => {
+    return n1 - n2;
+}
+
+const multiplicar :MathFunction = (n1, n2) => {
+    return n1 * n2;
+}
+
+const divir :MathFunction = (n1, n2) => {
+    return n1 / n2;
+}
+
+
