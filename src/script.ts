@@ -3,20 +3,31 @@
  * = comando de compilação =
  * =-=-=-=-=-=-=-=-=-=-=-=-=
  * 
- * $-> tsc src/script.ts --outDir public/assets/js
+ * $-> tsc src/script.ts --outDir public/assets/js/ //ou informar em tsconfig.json
  * 
  * =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
  * = whatchMode, compila automatico a cada save  =
  * =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
  * 
- *  $-> tsc src/script.ts --outDir public/assets/js -w
+ *  $-> tsc src/script.ts --outDir public/assets/js/ -w
  *
+ * =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+ * = gerando arqivo de configuração  =
+ * =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+ * 
+ *  $-> tsc --init
+ * 
+ * =-=-=-=-=-=-=-=-=-=-=-=-=
+ * = comando de compilação =
+ * =-=-=-=-=-=-=-=-=-=-=-=-=
+ * 
+ * $-> tsc --outDir public/assets/js/
 */
 
 let num1 = document.getElementById('nun1') as HTMLInputElement; 
 let num2 = document.getElementById('nun2') as HTMLInputElement;
 
-let btn = document.getElementById('calular');
+let btn = document.getElementById('calular')
 let res = document.getElementById('result');
 
 function calular(n1: number, n2: number)
